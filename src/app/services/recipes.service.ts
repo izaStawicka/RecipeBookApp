@@ -7,8 +7,6 @@ import { ShoppingListService } from "./shopping-list.service";
 export class RecipeService{
   constructor(private shoppingListService: ShoppingListService){}
 
-  recipeSelected = new EventEmitter<Recipe>();
-
   private recipes:Recipe[] = [new Recipe('Pancakes', 'Pancakes with berries', 'https://cdn.aniagotuje.com/pictures/articles/2023/02/38480090-v-1080x1080.jpg',
     [new Ingredient('Eggs', 4), new Ingredient('Flour', 500)]),
     new Recipe('Pierogi', 'Delicious Polish pierogi', 'https://mieszamwgarnku.pl/wp-content/uploads/2015/07/pierogizjagodai3.jpg',
