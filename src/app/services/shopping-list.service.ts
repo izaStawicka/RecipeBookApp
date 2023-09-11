@@ -50,4 +50,20 @@ export class ShoppingListService{
     ingredients.forEach(ing => this.AddNewIngredient(ing, false));
     this.ingredientsChanged.next(this.ingredients.slice());
   }
+
+  onStartEditing = new Subject<number>();
+
+  getItem(index: number){
+    return this.ingredients[index];
+  }
+
+  editIngredient(index: number, newIngredient: Ingredient){
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number){
+    this.ingredients.splice(index, 1);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
 }
